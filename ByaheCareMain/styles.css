@@ -1,0 +1,252 @@
+/* Reset default styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General page styling */
+body, html {
+  font-family: 'Host Grotesk', Arial, sans-serif;
+  background-color: #F5F5F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Changed to min-height to avoid fixed height */
+  overflow-x: hidden;
+}
+
+/* Header Styling */
+.site-header {
+  width: 100%;
+  height: 80px; /* Adjusted height for smaller screens */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  gap: 15px;
+}
+
+/* Header Text Styling */
+.site-header h1 {
+  font-size: 1.8em;
+  color: #1a1818;
+  margin: 0;
+  font-weight: bold;
+}
+
+.page-title{
+  display: flex;
+  justify-content: space-between
+}
+
+/* Logo content styling (container for image and text) */
+.logo-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* Logo text styling */
+.logo-text {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgb(12, 11, 11);
+  margin-left: 10px;
+}
+
+/* Logo Styling */
+.logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+.logo-image:hover {
+  opacity: 0.9;
+}
+
+/* Introduction Section */
+.intro-section {
+  font-size: 1.1em;
+  margin: 5% auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.intro-welcome {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.homepage {
+  background-color: #fff;
+  padding: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+
+/* Button container styling */
+.button-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  bottom: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+/* Button wrapper styling */
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button styling */
+.button-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #F95454;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #45a049;
+}
+
+/* Icon styling inside button */
+.button-container button i {
+  font-size: 1.5em;
+  color: white;
+}
+
+/* Label styling */
+.button-label {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+/* Page title styling per page */
+.page-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.content {
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  width: 90%;
+  text-align: center;
+  margin-top: 110px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2em;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.star-rating .filled {
+  color: gold;
+}
+
+.star-rating i {
+  transition: color 0.3s;
+}
+
+/* Submit Entry Button */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.form-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+input[type="text"], input[type="date"], textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .site-header h1,
+  .logo-text {
+    font-size: 1.5em;
+  }
+
+  .content {
+    margin-top: 60px;
+  }
+
+  .intro-section {
+    margin: 5% 10%;
+    font-size: 1em;
+  }
+
+  .button-container button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .button-label {
+    font-size: 0.8em;
+  }
+}

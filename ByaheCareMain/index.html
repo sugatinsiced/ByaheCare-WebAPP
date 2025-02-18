@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByaheCare</title>
+  
+  <!-- Updated Font Awesome link for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Consistent Header Section -->
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <div class="logo-content">
+        <img src="ByaheCare.png" alt="ByaheCare Logo" class="logo-image">
+        <span class="logo-text">ByaheCare</span>
+      </div>
+    </a>
+  </header>
+
+  <div class = "homepage">
+ <!-- Page Title -->
+  <div clas="welcome-section">
+ <h1 class="intro-welcome">Welcome to ByaheCare</h1>
+
+ <!-- Introduction Section -->
+ <section class="intro-section">
+   <p><strong>ByaheCare</strong> is a web app designed to improve your commuting experience in the Philippines. 
+     It allows users to report and rate public utility vehicles (PUVs), such as jeeps, buses, and other vehicles. 
+     Whether you are looking to provide feedback, report issues, or simply share your experience, ByaheCare is here to help you.
+   </p>
+   <br>
+   <h2>How to Use ByaheCare:</h2>
+   <ul>
+     <li><strong>Rate a Ride:</strong> Share your experience by rating the vehicle on a scale of 1 to 5 stars.</li>
+     <li><strong>Report a Ride:</strong> If you've encountered a problem, you can submit a report with details such as the vehicle's plate number, type, and the issue.</li>
+     <li><strong>View Complaints:</strong> Browse previous complaints submitted by you the user.</li>
+   </ul>
+   <p>
+    <br>
+     To get started, simply select one of the options in the navigation and begin contributing to the improvement of public transportation!
+   </p>
+ </section>
+</div>
+</div>
+
+  <!-- Button Container --> 
+  <div class="button-container">
+    <div class="button-wrapper">
+      <button onclick="window.location.href='report-ride.html'">
+        <i class="fa-solid fa-car-burst"></i>
+      </button>
+      <span class="button-label">Report a Ride</span>
+    </div>
+    <div class="button-wrapper">
+      <button onclick="window.location.href='rate-ride.html'">
+        <i class="fas fa-star"></i>
+      </button>
+      <span class="button-label">Rate a Ride</span>
+    </div>
+    <div class="button-wrapper">
+      <button onclick="window.location.href='complaints-list.php'">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <span class="button-label">Complaints List</span>
+    </div>
+  </div>
+
+</body>
+</html>

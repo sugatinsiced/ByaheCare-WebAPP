@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Ride - ByaheCare</title>
+  
+  <!-- Updated Font Awesome link for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Consistent Header Section -->
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <div class="logo-content">
+        <img src="ByaheCare.png" alt="ByaheCare Logo" class="logo-image">
+        <span class="logo-text">ByaheCare</span>
+      </div>
+    </a>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main class="content">
+    <!-- Page Title -->
+    <h1 class="page-title">Report a Ride</h1>
+
+    <form id="reportForm" action="submit_report.php" method="POST" enctype="multipart/form-data">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="vehicle_license">Vehicle License Plate:</label>
+      <input type="text" id="vehicle_license" name="vehicle_license" required><br><br>
+      
+      <label for="vehicle_type">Type of Vehicle:</label>
+      <select id="vehicle_type" name="vehicle_type">
+        <option value="Jeepney">Jeepney</option>
+        <option value="Bus">Bus</option>
+        <option value="UV Express">UV Express</option>
+        <option value="Tricycle">Tricycle</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+
+      <label for="complaint_type">Type of Complaint:</label>
+      <select id="complaint_type" name="complaint_type">
+        <option value="Overcharging">Overcharging</option>
+        <option value="Rude Driver">Rude Driver</option>
+        <option value="Unsafe Driving">Unsafe Driving</option>
+        <option value="Dirty Vehicle">Dirty Vehicle</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+      
+      <!-- Image Attachment Field -->
+      <label for="imageUpload">Attach Image (optional):</label>
+      <input type="file" id="imageUpload" name="imageUpload" accept="image/*"><br><br>
+
+      <label for="comments">Additional Comments:</label><br>
+      <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+      
+      <button type="submit">Submit Report</button>
+    </form>
+  </main>
+
+<script>
+  document.getElementById("reportForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("submit_report.php", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      console.log('Response Status:', response.status); // Check response status
+      return response.json();
+    })
+    .then(data => {
+      console.log('Response Data:', data); // Log response data
+      if (data.success) {
+        alert(data.message); // Use alert for feedback
+        console.log('Submission successful:', data.message); // Log for success
+      } else {
+        alert("There was an error submitting your report. Please try again.");
+        console.log('Submission failed:', data.message); // Log for failure
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was an error connecting to the server. Please try again.");
+    });
+  });
+</script>
+
+</body>
+</html>
